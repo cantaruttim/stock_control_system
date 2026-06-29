@@ -1,5 +1,7 @@
 package br.com.stock_control.smart_control.model;
 
+import br.com.stock_control.smart_control.model.enums.ProductType;
+
 public class Product {
     
     private String productSKU;
@@ -8,6 +10,7 @@ public class Product {
     private String productBrand;
     private double productPrice;
     private int productQuantity;
+    private ProductType productType;
     
 
     public Product() {}
@@ -18,13 +21,15 @@ public class Product {
         String productDescription, 
         String productBrand, 
         double productPrice, 
-        int productQuantity) {
+        int productQuantity, 
+        ProductType productType) {
             this.productSKU = productSKU;
             this.productName = productName;
             this.productDescription = productDescription;
             this.productBrand = productBrand;
             this.productPrice = productPrice;
             this.productQuantity = productQuantity;
+            this.productType = productType;
     }
 
     public String getProductSKU() {
@@ -73,6 +78,14 @@ public class Product {
 
     public void setProductQuantity(int productQuantity) {
         this.productQuantity = productQuantity;
+    }
+
+    public ProductType getProductType() {
+        return productType;
+    }
+
+    public void setProductType(ProductType productType) {
+        this.productType = productType;
     }
 
     public double calculateTotalValue() {
